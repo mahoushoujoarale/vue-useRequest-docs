@@ -1,1 +1,0 @@
-import{_ as c,o as a,c as t,b as e,d as n}from"./app-381e7028.js";const o={},r=e("h1",{id:"取消请求",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#取消请求","aria-hidden":"true"},"#"),n(" 取消请求")],-1),s=[r];function _(d,l){return a(),t("div",null,s)}const h=c(o,[["render",_],["__file","cancel.html.vue"]]);export{h as default};
