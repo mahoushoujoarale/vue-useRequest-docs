@@ -6,6 +6,7 @@ export default defineUserConfig({
   title: 'useRequest',
   description: 'A library for manage your request for Vue + Composition API',
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  base: '/vue-useRequest-docs/',
   dest: 'docs',
   theme: recoTheme({
     repo: 'mahoushoujoarale/vue-useRequest',
