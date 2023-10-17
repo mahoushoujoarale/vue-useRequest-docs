@@ -9,6 +9,7 @@ export default defineUserConfig({
   base: '/vue-useRequest-docs/',
   dest: 'docs',
   theme: recoTheme({
+    home: '/',
     repo: 'mahoushoujoarale/vue-useRequest',
     logo: '/logo.png',
     navbar: [
