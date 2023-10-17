@@ -11,7 +11,7 @@
     "build": "vuepress build ."
   },
   "dependencies": {
-    "@superarale/vue-use-request": "^1.0.5",
+    "@superarale/vue-use-request": "^1.2.0",
     "axios": "^1.5.1",
     "vue": "^3.3.4",
     "vuepress": "2.0.0-beta.67",

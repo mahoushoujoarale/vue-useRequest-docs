@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5ecefb46","path":"/document/basic.html","title":"基础用法","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":1697526425000,"updatedTime":1697526425000,"contributors":[{"name":"zhaojie09","email":"zhaojie09@kuaishou.com","commits":1}]},"filePathRelative":"document/basic.md"}');export{e as data};

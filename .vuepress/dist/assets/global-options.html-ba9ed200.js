@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-4269592c","path":"/document/global-options.html","title":"全局配置","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":1697526425000,"updatedTime":1697526425000,"contributors":[{"name":"zhaojie09","email":"zhaojie09@kuaishou.com","commits":1}]},"filePathRelative":"document/global-options.md"}');export{t as data};
