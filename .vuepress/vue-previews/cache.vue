@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input v-model="cacheTime" />
     <div style="max-height: 400px; overflow: auto;">resutl: {{ result }}</div>
     <div>loading: {{ loading }}</div>
     <div>error: {{ error }}</div>
@@ -10,6 +11,7 @@
 <script lang="ts" setup>
 import axios from 'axios';
 import { useRequest } from '@superarale/vue-use-request';
+import { ref } from 'vue';
 
 const url = 'https://restapi.amap.com/v3/weather/weatherInfo?key=e641661b0dfbf7ffa23a2110d44f38de&city=110000';
 const request = async (signal: AbortSignal) => {
@@ -18,5 +20,9 @@ const request = async (signal: AbortSignal) => {
   })
 };
 
-const { result, loading, error, run } = useRequest(request);
+const cacheTime =  ref(0);
+
+const { result, loading, error, run } = useRequest(request, {
+  cacheTime: cacheTime.value,
+});
 </script>
