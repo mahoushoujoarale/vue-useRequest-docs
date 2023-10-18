@@ -15,5 +15,5 @@ const { result } = useRequest(request, {
 });
 ```
 :::tip
-配置权重：defaultOptions < setGlobalOptions < 局部自定义options
+配置权重：defaultOptions < setGlobalOptions < 局部自定义options。
 :::

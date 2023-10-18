@@ -31,6 +31,6 @@
 | vue-useRequest | ✔ | ✔ | ❌ | ✔ | ❌ | ✔ | ✔ | ✔ | ✔ |
 
 ## 致谢
-- [SWR](https://swr.vercel.app)<br/>
-- [ahooks](https://ahooks.js.org)<br/>
+- [SWR](https://swr.vercel.app)
+- [ahooks](https://ahooks.js.org)
 - [vue-request](https://www.attojs.com)

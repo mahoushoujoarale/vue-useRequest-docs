@@ -24,6 +24,7 @@ export default defineUserConfig({
           { text: '支持', link: '/donation/' },
         ],
       },
+      { text: 'FAQ', link: '/faq/' },
       { text: 'ISSUES', link: 'https://github.com/mahoushoujoarale/vue-useRequest/issues' },
     ],
     series: {
@@ -34,7 +35,7 @@ export default defineUserConfig({
         },
         {
           text: '文档',
-          children: ['global-options', 'basic', 'cache', 'cancel'],
+          children: ['global-options', 'basic', 'cache', 'cancel', 'lifecycle'],
         },
       ],
     },
