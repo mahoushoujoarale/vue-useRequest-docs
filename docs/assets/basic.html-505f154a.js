@@ -1,1 +1,0 @@
-import{_ as a,o as t,c,b as e,d as s}from"./app-f7d0bac3.js";const o={},r=e("h1",{id:"基础用法",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#基础用法","aria-hidden":"true"},"#"),s(" 基础用法")],-1),n=[r];function _(d,i){return t(),c("div",null,n)}const l=a(o,[["render",_],["__file","basic.html.vue"]]);export{l as default};
