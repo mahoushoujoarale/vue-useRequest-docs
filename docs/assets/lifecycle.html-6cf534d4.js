@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5c73280a","path":"/document/lifecycle.html","title":"生命周期","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"document/lifecycle.md"}');export{e as data};

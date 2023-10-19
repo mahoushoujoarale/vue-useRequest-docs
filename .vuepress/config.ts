@@ -5,7 +5,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'useRequest',
   description: 'A library for manage your request for Vue + Composition API',
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [['link', { rel: 'icon', href: 'https://cn.vuejs.org/logo.svg' }]],
   base: '/vue-useRequest-docs/',
   dest: 'docs',
   theme: recoTheme({
@@ -14,17 +14,17 @@ export default defineUserConfig({
     logo: '/logo.png',
     navbar: [
       { text: '文档', link: '/document/guide' },
-      { text: 'API参考', link: '/api/' },
+      { text: 'API参考', link: '/api' },
       {
         text: '关于我',
         children: [
           { text: 'Github', link: 'https://github.com/mahoushoujoarale' },
           { text: '掘金', link: 'https://juejin.cn/user/3369351964272237/posts' },
-          { text: '简介', link: '/aboutme/' },
-          { text: '支持', link: '/donation/' },
+          { text: '简介', link: '/aboutme' },
+          { text: '支持', link: '/donation' },
         ],
       },
-      { text: 'FAQ', link: '/faq/' },
+      { text: 'FAQ', link: '/faq' },
       { text: 'ISSUES', link: 'https://github.com/mahoushoujoarale/vue-useRequest/issues' },
     ],
     series: {
@@ -35,7 +35,11 @@ export default defineUserConfig({
         },
         {
           text: '文档',
-          children: ['global-options', 'basic', 'cache', 'cancel', 'lifecycle'],
+          children: ['options', 'basic', 'cache', 'cancel', 'retry', 'lifecycle'],
+        },
+        {
+          text: '兼容性',
+          children: ['fetch', 'vue2'],
         },
       ],
     },

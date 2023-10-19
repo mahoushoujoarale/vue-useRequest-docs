@@ -80,6 +80,12 @@ P、R分别是[Service](#service)自身参数和返回数据的泛型。
 
 在cacheTime有效期内发起的[run](#run)请求，如果已有缓存数据，将直接返回缓存结果。单位为毫秒，可参考[缓存](/document/cache.md)。
 
+### retryTimes
+- 类型：`number`
+- 默认值 `0`
+
+请求失败后重试次数，可参考[错误重试](/document/retry.md)。
+
 ### onSuccess
 - 类型：`<T>(result: T) => void;`
 - 默认值 `false`
