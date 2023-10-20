@@ -3,34 +3,27 @@
     <h3>result: <span>{{ result }}</span></h3>
     <h3>loading: <span>{{ loading }}</span></h3>
     <h3>error: <span>{{ error }}</span></h3>
-    <h3>onCache: <span>{{ cacheStr }}</span></h3>
-    <button class="primary" @click="run">run</button>
+    <h3>onCache: <span>{{ onCacheStr }}</span></h3>
+    <button class="primary" @click="() => run()">run</button>
     <button @click="reset">reset</button>
   </div>
 </template>
 
 <script lang="ts" setup>
-import axios from 'axios';
 import { ref } from 'vue';
 import { useRequest } from '@superarale/vue-use-request';
+import { request } from './request';
 
-const cacheStr = ref('');
-const url = 'https://restapi.amap.com/v3/weather/weatherInfo?key=e641661b0dfbf7ffa23a2110d44f38de&city=110000';
-const request = async (signal) => {
-  const res = await axios.get<string>(url, {
-    signal,
-  });
-  return res.data;
-};
+const onCacheStr = ref('');
 
 const onCache = () => {
-  cacheStr.value = 'onCache triggered';
+  onCacheStr.value = 'onCache triggered';
 };
 const reset = () => {
   result.value = null;
   loading.value = false;
   error.value = null;
-  cacheStr.value = '';
+  onCacheStr.value = '';
 };
 
 const { result, loading, error, run } = useRequest(request, {

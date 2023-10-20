@@ -1,10 +1,10 @@
 # API参考
-useRequest通常由[Return Values](#return-values)、[Service](#service)、[Options](#options)三部分组成：
+useRequest通常由 [Return Values](#return-values)、[Request](#request)、[Options](#options) 三部分组成：
 ```ts
-const { ...ReturnValues } = useRequest<P, R>(Service, Options);
+const { ...ReturnValues } = useRequest<P, R>(Request, Options);
 ```
 :::tip
-P、R分别是[Service](#service)自身参数和返回数据的泛型。
+P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 :::
 
 ## Return Values
@@ -18,7 +18,7 @@ P、R分别是[Service](#service)自身参数和返回数据的泛型。
 - 类型：`shallowRef<boolean>`
 - 默认值 `false`
 
-[Service](#service)请求的执行状态。
+[Request](#request) 请求的执行状态。
 
 ### error
 - 类型：`shallowRef<Error | null>`
@@ -32,19 +32,19 @@ P、R分别是[Service](#service)自身参数和返回数据的泛型。
 ### run
 - 类型：`(...params: P) = > shallowRef<R | Error>`
 
-触发[Service](#service)请求，返回请求的结果。
+触发 [Request](#request) 请求，返回请求的结果。
 
 ### forceRun
 - 类型：`(...params: P) = > shallowRef<R | Error>`
 
-强制触发[Service](#service)请求，忽略缓存和已在进行中请求，返回请求的结果。
+强制触发 [Request](#request) 请求，忽略缓存和已在进行中请求，返回请求的结果。
 
 ### cancel
 - 类型：`() => void`
 
-手动取消进行中的请求，如果正确配置了[Service](#service)的第一个[AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)类型的参数，那么能够真正取消网络请求，可参考[取消请求](/document/cancel.md)。
+手动取消进行中的请求，如果正确配置了 [Request](#request) 的第一个 [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) 类型的参数，那么能够真正取消网络请求，可参考[取消请求](/document/cancel.md)。
 
-## Service
+## Request
 - 类型：`(signal: AbortSignal, ...params: P) => Promise<R>`
 
 网络请求，传递给`useRequest`的第一个参数，可参考[基础用法](/document/basic.md)。
@@ -56,7 +56,7 @@ P、R分别是[Service](#service)自身参数和返回数据的泛型。
 
 是否取消上次尚未完成的请求。
 :::tip
-当[useLastRequest](#uselastrequest)为true时，将忽略该项设置。
+当 [useLastRequest](#uselastrequest) 为true时，将忽略该项设置。
 :::
 
 ### cancelOnDispose
@@ -71,14 +71,14 @@ P、R分别是[Service](#service)自身参数和返回数据的泛型。
 
 设置为true时，如果有尚未完成的请求，等待其响应，取消本次请求的发送。
 :::tip
-当该项置为true，并且发起请求时仍有尚未完成的请求，那么该次请求不会触发onBefore、onAfter、onSuccess、onError。
+当该项置为true，并且发起请求时仍有尚未完成的请求，那么该次请求不会触发`onBefore`、`onAfter`、`onSuccess`、`onError`。
 :::
 
 ### cacheTime
 - 类型：`number`
 - 默认值 `0`
 
-在cacheTime有效期内发起的[run](#run)请求，如果已有缓存数据，将直接返回缓存结果。单位为毫秒，可参考[缓存](/document/cache.md)。
+在cacheTime有效期内发起的 [run](#run) 请求，如果已有缓存数据，将直接返回缓存结果。单位为毫秒，可参考[缓存](/document/cache.md)。
 
 ### retryTimes
 - 类型：`number`
