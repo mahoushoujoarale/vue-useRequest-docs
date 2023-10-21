@@ -14,8 +14,8 @@ const { result, loading, error, run } = useRequest(request, {
 ```ts
 const onCacheStr = ref('');
 
-const onCache = () => {
-  onCacheStr.value = 'onCache 被触发';
+const onCache = (result: IResult) => {
+  onCacheStr.value = `onCache triggered: ${result}`;
 };
 
 const { result, loading, error, run } = useRequest(request, {

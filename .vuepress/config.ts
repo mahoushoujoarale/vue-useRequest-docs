@@ -1,4 +1,4 @@
-import { defineUserConfig } from 'vuepress';
+import { defineUserConfig, viteBundler } from 'vuepress';
 import { recoTheme } from 'vuepress-theme-reco';
 
 export default defineUserConfig({
@@ -36,13 +36,18 @@ export default defineUserConfig({
         },
         {
           text: '文档',
-          children: ['options', 'basic', 'cache', 'cancel', 'retry', 'lifecycle'],
+          children: ['options', 'basic', 'cache', 'cancel', 'race-condition', 'force-run', 'retry', 'lifecycle'],
         },
         {
           text: '兼容性',
           children: ['fetch', 'vue2'],
         },
       ],
+    },
+  }),
+  bundler: viteBundler({
+    viteOptions: {
+      base: '/vue-useRequest-docs/',
     },
   }),
 });

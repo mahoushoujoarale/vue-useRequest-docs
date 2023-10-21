@@ -1,4 +1,4 @@
-import axios from 'axios';
+export type IResult = string;
 
 const url = 'https://restapi.amap.com/v3/ip?key=e641661b0dfbf7ffa23a2110d44f38de&city=110000';
 

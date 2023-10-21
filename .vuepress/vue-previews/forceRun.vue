@@ -5,6 +5,7 @@
     <h3>error: <span>{{ error }}</span></h3>
     <h3>onCache: <span>{{ onCacheStr }}</span></h3>
     <button class="primary" @click="() => run()">run</button>
+    <button @click="() => forceRun()">forceRun</button>
     <button @click="reset">reset</button>
   </div>
 </template>
@@ -26,8 +27,9 @@ const reset = () => {
   onCacheStr.value = '';
 };
 
-const { result, loading, error, run } = useRequest(request, {
+const { result, loading, error, run, forceRun } = useRequest(request, {
   cacheTime: 3000,
   onCache,
+  useLastRequest: true,
 });
 </script>

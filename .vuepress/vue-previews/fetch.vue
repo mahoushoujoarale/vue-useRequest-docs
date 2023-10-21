@@ -17,7 +17,3 @@ const toggleChild = () => {
   mountChild.value = !mountChild.value;
 };
 </script>
-
-<style>
-@import './style.css';
-</style>

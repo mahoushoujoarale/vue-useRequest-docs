@@ -31,7 +31,3 @@ const { result, loading, error, run, cancel } = useRequest(request, {
   onCancel,
 });
 </script>
-
-<style>
-@import './style.css';
-</style>

@@ -3,8 +3,7 @@
     <h3>result: <span>{{ result }}</span></h3>
     <h3>loading: <span>{{ loading }}</span></h3>
     <h3>error: <span>{{ error }}</span></h3>
-    <button class="primary" @click="() => run(false)">run</button>
-    <button @click="() => run(true)">runError</button>
+    <button class="primary" @click="() => run()">run</button>
     <button @click="reset">reset</button>
   </div>
 </template>
@@ -19,5 +18,7 @@ const reset = () => {
   error.value = null;
 };
 
-const { result, loading, error, run } = useRequest(request);
+const { result, loading, error, run } = useRequest(request, {
+  useLastRequest: true,
+});
 </script>

@@ -8,7 +8,7 @@ const { result, loading, error, run } = useRequest(request, {
 });
 ```
 :::warning
-`onError`仅会在错误重试次数用尽后触发，`error`的状态同理。
+`onError`仅会在错误重试次数用尽后触发，`error`状态同理。
 :::
 
 ## 完整示例

@@ -3,8 +3,8 @@
     <h3>result: <span>{{ result }}</span></h3>
     <h3>loading: <span>{{ loading }}</span></h3>
     <h3>error: <span>{{ error }}</span></h3>
-    <h3>onSuccess: <span>{{ successStr }}</span></h3>
-    <h3>onError: <span>{{ errorStr }}</span></h3>
+    <h3>onSuccess: <span>{{ onSuccessStr }}</span></h3>
+    <h3>onError: <span>{{ onErrorStr }}</span></h3>
     <button class="primary" @click="() => run(false)">run</button>
     <button @click="() => run(true)">runError</button>
     <button @click="reset">reset</button>
@@ -14,23 +14,23 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRequest } from '@superarale/vue-use-request';
-import { request } from './request';
+import { IResult, request } from './request';
 
-const successStr = ref('');
-const errorStr = ref('');
+const onSuccessStr = ref('');
+const onErrorStr = ref('');
 
-const onSuccess = () => {
-  successStr.value = 'onSuccess triggered';
+const onSuccess = (result: IResult) => {
+  onSuccessStr.value = `onSuccess triggered: ${result}`;
 };
-const onError = () => {
-  errorStr.value = 'onError triggered';
+const onError = (error: Error) => {
+  onErrorStr.value = `onError triggered: ${error}`;
 };
 const reset = () => {
   result.value = null;
   loading.value = false;
   error.value = null;
-  successStr.value = '';
-  errorStr.value = '';
+  onSuccessStr.value = '';
+  onErrorStr.value = '';
 };
 
 const { result, loading, error, run } = useRequest(request, {
@@ -39,7 +39,3 @@ const { result, loading, error, run } = useRequest(request, {
   onError,
 });
 </script>
-
-<style>
-@import './style.css';
-</style>

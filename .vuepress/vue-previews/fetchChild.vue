@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRequest } from '@superarale/vue-use-request';
-import { request } from './fetchRequest';
+import { IResult, request } from './fetchRequest';
 
 const onCancelStr = ref('');
 const onCacheStr = ref('');
@@ -31,8 +31,8 @@ const onErrorStr = ref('');
 const onCancel = () => {
   onCancelStr.value = 'onCancel triggered';
 };
-const onCache = () => {
-  onCacheStr.value = 'onCache triggered';
+const onCache = (result: IResult) => {
+  onCacheStr.value = `onCache triggered: ${result}`;
 };
 const onBefore = () => {
   onBeforeStr.value = 'onBefore triggered';
@@ -40,11 +40,11 @@ const onBefore = () => {
 const onAfter = () => {
   onAfterStr.value = 'onAfter triggered';
 };
-const onSuccess = () => {
-  onSuccessStr.value = 'onSuccess triggered';
+const onSuccess = (result: IResult) => {
+  onSuccessStr.value = `onSuccess triggered: ${result}`;
 };
-const onError = () => {
-  onErrorStr.value = 'onError triggered';
+const onError = (error: Error) => {
+  onErrorStr.value = `onError triggered: ${error}`;
 };
 
 const reset = () => {
@@ -71,7 +71,3 @@ const { result, loading, error, run, cancel } = useRequest(request, {
   onError,
 });
 </script>
-
-<style>
-@import './style.css';
-</style>

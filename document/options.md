@@ -29,11 +29,16 @@ const { result } = useRequest(request, {
 ```
 
 ## 类型
-`useRequest`导出了配置项的Typescript类型`IUseRequestOptions`：
+`useRequest`导出了全局配置项和局部配置项的Typescript类型`IGlobalOptions`和`IUseRequestOptions`：
 ```ts
-import { IUseRequestOptions } from '@superarale/vue-use-request';
+import { IGlobalOptions, IUseRequestOptions, setGlobalOptions } from '@superarale/vue-use-request';
 // ...
-const options: IUseRequestOptions =  {
+const globalOptions: IGlobalOptions = {
+  cancelOnDispose: false,
+};
+setGlobalOptions(globalOptions);
+// ...
+const options: IUseRequestOptions<IResult> =  {
   useLastRequest: true,
 };
 const { result } = useRequest(request, options);
