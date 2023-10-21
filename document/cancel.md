@@ -4,7 +4,7 @@
 :::
 
 ## 取消尚未完成的请求
-通过 [cancelLastRequest](../api/#cancellastrequest) 选项控制是否取消尚未完成的请求。
+通过 [cancelLastRequest](../api#cancellastrequest) 选项控制是否取消尚未完成的请求。
 ```ts
 const { result, loading, error, run } = useRequest(request, {
   cancelLastRequest: false,
@@ -12,7 +12,7 @@ const { result, loading, error, run } = useRequest(request, {
 ```
 
 ## 组件卸载时取消当前组件尚未完成的请求
-通过 [cancelOnDispose](../api/#cancelondispose) 选项控制是否在组件卸载时取消当前组件尚未完成的请求。
+通过 [cancelOnDispose](../api#cancelondispose) 选项控制是否在组件卸载时取消当前组件尚未完成的请求。
 ```ts
 const { result, loading, error, run } = useRequest(request, {
   cancelOnDispose: false,
@@ -20,13 +20,13 @@ const { result, loading, error, run } = useRequest(request, {
 ```
 
 ## 手动取消请求
-通过`useRequest`返回的 [cancel](../api/#cancel) 函数手动取消请求。
+通过`useRequest`返回的 [cancel](../api#cancel) 函数手动取消请求。
 ```ts
 const { result, loading, error, run, cancel } = useRequest(request);
 ```
 
 ## 监听取消请求
-通过传入 [onCancel](../api/#oncancel) 函数，可以在`cancel`方法被调用时触发回调。
+通过传入 [onCancel](../api#oncancel) 函数，可以在`cancel`方法被调用时触发回调。
 ```ts
 const onCancelStr = ref('');
 

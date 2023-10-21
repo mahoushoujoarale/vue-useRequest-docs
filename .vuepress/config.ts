@@ -17,17 +17,17 @@ export default defineUserConfig({
     docsRepo: 'mahoushoujoarale/vue-useRequest-docs',
     navbar: [
       { text: '文档', link: '/document/guide' },
-      { text: 'API参考', link: '/api/' },
+      { text: 'API参考', link: '/api' },
       {
         text: '关于我',
         children: [
           { text: 'Github', link: 'https://github.com/mahoushoujoarale' },
           { text: '掘金', link: 'https://juejin.cn/user/3369351964272237/posts' },
-          { text: '简介', link: '/aboutme/' },
-          { text: '支持', link: '/donation/' },
+          { text: '简介', link: '/aboutme' },
+          { text: '支持', link: '/donation' },
         ],
       },
-      { text: 'FAQ', link: '/faq/' },
+      { text: 'FAQ', link: '/faq' },
       { text: 'ISSUES', link: 'https://github.com/mahoushoujoarale/vue-useRequest/issues' },
     ],
     series: {
