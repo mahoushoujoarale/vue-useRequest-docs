@@ -1,5 +1,7 @@
 import { defineUserConfig, viteBundler } from 'vuepress';
 import { recoTheme } from 'vuepress-theme-reco';
+import codeBlockPlugin from '@bfehub/vuepress-plugin-code-block';
+import path from 'path';
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -45,6 +47,10 @@ export default defineUserConfig({
       ],
     },
   }),
+  plugins: [
+    // @ts-ignore
+    codeBlockPlugin(),
+  ],
   bundler: viteBundler({
     viteOptions: {
       base: '/vue-useRequest-docs/',

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress {{ version }}">
+    <script>
+      (function() {
+        const userMode = localStorage.getItem('vuepress-reco-color-scheme') || 'auto';
+        const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (userMode === 'dark' || (userMode === 'auto' && systemDarkMode)) {
+          document.documentElement.classList.toggle('dark', true);
+        }
+      })();
+    </script>
+    <!--vuepress-ssr-head-->
+    <!--vuepress-ssr-resources-->
+    <!--vuepress-ssr-styles-->
+    <script type="module" crossorigin src="/vue-useRequest-docs/assets/-iframe-6aa4cc3a.js"></script>
+    <link rel="modulepreload" crossorigin href="/vue-useRequest-docs/assets/clientConfigs-8aa21dc4.js">
+    <link rel="stylesheet" href="/vue-useRequest-docs/assets/style-5ac47de7.css">
+  </head>
+  <body>
+    <div id="app"><!--vuepress-ssr-app--></div>
+    <!--vuepress-ssr-scripts-->
+  
+</body>
+</html>

@@ -1,7 +1,3 @@
-.demo-container {
-  padding: 0 20px;
-}
-
 .demo-container h3 {
   padding-top: 0;
   margin: 0 0 24px;
@@ -28,4 +24,9 @@
   font-size: 16px;
   font-weight: 500;
   margin-left: 16px;
+}
+
+:root {
+  --c-brand: #3eaf7c;
+  --c-border: #eaecef;
 }
