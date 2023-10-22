@@ -43,7 +43,6 @@ const onAfter = () => {
 };
 const onSuccess = (result: IResult) => {
   onSuccessStr.value = `onSuccess triggered: ${JSON.stringify(result)}`;
-  console.log(result);
 };
 const onError = (error: Error) => {
   onErrorStr.value = `onError triggered: ${error}`;

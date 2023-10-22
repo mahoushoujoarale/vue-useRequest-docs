@@ -899,10 +899,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@superarale/vue-use-request@^1.3.5":
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/@superarale/vue-use-request/-/vue-use-request-1.3.5.tgz#b269ae75feec12f5293be5a5fa3fda131dcf8320"
-  integrity sha512-YFAH5XOdJD0HAWnK0eUgRmm2oPNoZbtIAlsAfdEVgtgfwyQj9r866YQm0JUampLpLD/cB5vm3v9z2n6JZgYEEw==
+"@superarale/vue-use-request@^1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@superarale/vue-use-request/-/vue-use-request-1.3.7.tgz#4e14979f6a1a3d88ec280afcc66e32a05969577d"
+  integrity sha512-oUEViBtGxs6OInO7ukxcUyTQ19yuGtDA32LIBysIzxpBWVZlz/UzvlUJZPg5lrrOrLTSojLSS+vHS4HACMimEA==
   dependencies:
     vue-demi "^0.14.6"
 

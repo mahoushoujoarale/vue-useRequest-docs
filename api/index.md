@@ -42,7 +42,7 @@ P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 强制触发 [Request](#request) 请求，忽略缓存和已在进行中请求，返回请求的结果。
 
 ### cancel
-- 类型：`() => void`
+- 类型：`() => boolean`
 
 手动取消进行中的请求，如果正确配置了 [Request](#request) 的第一个 [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) 类型的参数，那么能够真正取消网络请求，可参考[取消请求](/document/cancel.md)。
 

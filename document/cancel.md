@@ -20,13 +20,19 @@ const { result, loading, error, run } = useRequest(request, {
 ```
 
 ## 手动取消请求
-通过`useRequest`返回的 [cancel](../api#cancel) 函数手动取消请求。
+通过`useRequest`返回的 [cancel](../api#cancel) 函数手动取消请求，如果没有进行中的请求，返回`false`，否则返回`true`。
 ```ts
 const { result, loading, error, run, cancel } = useRequest(request);
+// ...
+const isCanceled = cancel();
 ```
 
+:::warning
+如果没有进行中的请求，调用`cancel`并不会触发`onCancel`。
+:::
+
 ## 监听取消请求
-通过传入 [onCancel](../api#oncancel) 函数，可以在`cancel`方法被调用时触发回调。
+通过传入 [onCancel](../api#oncancel) 函数，可以在请求被取消时触发回调。
 ```ts
 const onCancelStr = ref('');
 
