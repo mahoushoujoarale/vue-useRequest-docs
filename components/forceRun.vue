@@ -4,8 +4,8 @@
     <h3>loading: <span>{{ loading }}</span></h3>
     <h3>error: <span>{{ error }}</span></h3>
     <h3>onCache: <span>{{ onCacheStr }}</span></h3>
-    <button class="primary" @click="() => run()">run</button>
-    <button @click="() => forceRun()">forceRun</button>
+    <button class="primary" @click="handleRun">run</button>
+    <button @click="handleForceRun">forceRun</button>
     <button @click="reset">reset</button>
   </div>
 </template>
@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRequest } from '@superarale/vue-use-request';
-import { IResult, request } from './request';
+import { request, IParams, IResult, correctKey } from './request';
 
 const onCacheStr = ref('');
 
@@ -32,4 +32,17 @@ const { result, loading, error, run, forceRun } = useRequest(request, {
   onCache,
   useLastRequest: true,
 });
+
+const handleRun = () => {
+  const params: IParams = {
+    key: correctKey,
+  };
+  run(params);
+};
+const handleForceRun = () => {
+  const params: IParams = {
+    key: correctKey,
+  };
+  forceRun(params);
+};
 </script>

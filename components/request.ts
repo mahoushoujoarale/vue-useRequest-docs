@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+export interface IParams {
+  key: string;
+}
+
 export interface IResult {
   adcode: string[];
   city: string[];
@@ -10,15 +14,18 @@ export interface IResult {
   status: string;
 };
 
-const url = 'https://restapi.amap.com/v3/ip?key=e641661b0dfbf7ffa23a2110d44f38de';
-export const request = async (signal: AbortSignal, isWrong?: boolean) => {
-  if (isWrong) {
-    await new Promise((resolve, reject) => setTimeout(() => {
-      reject(new Error('error'));
-    }, 1000));
-  }
+const url = 'https://restapi.amap.com/v3/ip';
+export const correctKey = 'e641661b0dfbf7ffa23a2110d44f38de';
+
+export const request = async (signal: AbortSignal, params: IParams) => {
   const res = await axios.get<IResult>(url, {
     signal,
+    params,
   });
-  return res.data;
+  const data = res.data;
+
+  if (data.status !== '1') {
+    throw new Error(data.info);
+  }
+  return data;
 };

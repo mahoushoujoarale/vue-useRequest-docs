@@ -3,15 +3,15 @@
     <h3>result: <span>{{ result }}</span></h3>
     <h3>loading: <span>{{ loading }}</span></h3>
     <h3>error: <span>{{ error }}</span></h3>
-    <button class="primary" @click="() => run(false)">run</button>
-    <button @click="() => run(true)">runError</button>
+    <button class="primary" @click="handleRun">run</button>
+    <button @click="handleRunError">runError</button>
     <button @click="reset">reset</button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useRequest } from '@superarale/vue-use-request';
-import { request } from './request';
+import { request, IParams, correctKey } from './request';
 
 const reset = () => {
   result.value = null;
@@ -20,4 +20,17 @@ const reset = () => {
 };
 
 const { result, loading, error, run } = useRequest(request);
+
+const handleRun = () => {
+  const params: IParams = {
+    key: correctKey,
+  };
+  run(params);
+};
+const handleRunError = () => {
+  const params: IParams = {
+    key: 'badkey',
+  };
+  run(params);
+};
 </script>

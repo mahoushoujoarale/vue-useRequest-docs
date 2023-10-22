@@ -3,6 +3,7 @@ useRequest通常由 [Return Values](#return-values)、[Request](#request)、[Opt
 ```ts
 const { ...ReturnValues } = useRequest<P, R>(Request, Options);
 ```
+
 :::tip
 P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 :::
@@ -25,6 +26,7 @@ P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 - 默认值 `null`
 
 如果请求过程中发生错误，会被`error`接收并返回。
+
 :::tip
 如果请求被取消，将不会修改error的值。
 :::
@@ -55,6 +57,7 @@ P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 - 默认值 `true`
 
 是否取消上次尚未完成的请求。
+
 :::tip
 当 [useLastRequest](#uselastrequest) 为true时，将忽略该项设置。
 :::
@@ -70,6 +73,7 @@ P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 - 默认值 `false`
 
 设置为true时，如果有尚未完成的请求，等待其响应，取消本次请求的发送。
+
 :::tip
 当该项置为true，并且发起请求时仍有尚未完成的请求，那么该次请求不会触发`onBefore`、`onAfter`、`onSuccess`、`onError`。
 :::
@@ -103,6 +107,7 @@ P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 - 默认值 `false`
 
 请求错误时触发。
+
 :::tip
 被取消的请求不会触发onError。
 :::
@@ -118,6 +123,7 @@ P、R分别是 [Request](#request) 自身参数和返回数据的泛型。
 - 默认值 `false`
 
 请求完成后触发。
+
 :::tip
 被取消的请求不会触发onAfter。
 :::

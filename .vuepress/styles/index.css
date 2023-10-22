@@ -1,3 +1,8 @@
+:root {
+  --c-brand: #3eaf7c;
+  --c-border: #eaecef;
+}
+
 .demo-container h3 {
   padding-top: 0;
   margin: 0 0 24px;
@@ -27,7 +32,10 @@
   margin-left: 16px;
 }
 
-:root {
-  --c-brand: #3eaf7c;
-  --c-border: #eaecef;
+.demo-container input {
+  margin-left: 16px;
+  max-width: 200px;
+  border: #d5d6d9 1px solid;
+  border-radius: 4px;
+  padding: 0 4px;
 }

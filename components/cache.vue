@@ -4,7 +4,7 @@
     <h3>loading: <span>{{ loading }}</span></h3>
     <h3>error: <span>{{ error }}</span></h3>
     <h3>onCache: <span>{{ onCacheStr }}</span></h3>
-    <button class="primary" @click="() => run()">run</button>
+    <button class="primary" @click="handleRun">run</button>
     <button @click="reset">reset</button>
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRequest } from '@superarale/vue-use-request';
-import { IResult, request } from './request';
+import { request, IParams, IResult, correctKey } from './request';
 
 const onCacheStr = ref('');
 
@@ -30,4 +30,11 @@ const { result, loading, error, run } = useRequest(request, {
   cacheTime: 3000,
   onCache,
 });
+
+const handleRun = () => {
+  const params: IParams = {
+    key: correctKey,
+  };
+  run(params);
+};
 </script>

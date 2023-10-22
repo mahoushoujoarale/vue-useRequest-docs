@@ -9,10 +9,10 @@
     <h3>onAfter: <span>{{ onAfterStr }}</span></h3>
     <h3>onSuccess: <span>{{ onSuccessStr }}</span></h3>
     <h3>onError: <span>{{ onErrorStr }}</span></h3>
-    <button class="primary" @click="() => run()">run</button>
-    <button @click="() => forceRun()">forceRun</button>
+    <button class="primary" @click="handleRun">run</button>
+    <button @click="handleForceRun">forceRun</button>
     <button @click="cancel">cancel</button>
-    <button @click="() => run(true)">runError</button>
+    <button @click="handleRunError">runError</button>
     <button @click="reset">reset</button>
   </div>
 </template>
@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRequest } from '@superarale/vue-use-request';
-import { IResult, request } from './request';
+import { request, IParams, IResult, correctKey } from './request';
 
 const onCancelStr = ref('');
 const onCacheStr = ref('');
@@ -72,4 +72,23 @@ const { result, loading, error, run, forceRun, cancel } = useRequest(request, {
   onSuccess,
   onError,
 });
+
+const handleRun = () => {
+  const params: IParams = {
+    key: correctKey,
+  };
+  run(params);
+};
+const handleForceRun = () => {
+  const params: IParams = {
+    key: correctKey,
+  };
+  forceRun(params);
+};
+const handleRunError = () => {
+  const params: IParams = {
+    key: 'badkey',
+  };
+  run(params);
+};
 </script>

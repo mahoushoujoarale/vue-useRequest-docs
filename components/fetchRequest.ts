@@ -1,3 +1,7 @@
+export interface IParams {
+  key: string;
+}
+
 export interface IResult {
   adcode: string[];
   city: string[];
@@ -8,16 +12,22 @@ export interface IResult {
   status: string;
 };
 
-const url = 'https://restapi.amap.com/v3/ip?key=e641661b0dfbf7ffa23a2110d44f38de';
+const url = 'https://restapi.amap.com/v3/ip';
+export const correctKey = 'e641661b0dfbf7ffa23a2110d44f38de';
 
-export const request = async (signal: AbortSignal, isWrong?: boolean) => {
-  if (isWrong) {
-    await new Promise((resolve, reject) => setTimeout(() => {
-      reject(new Error('error'));
-    }, 1000));
-  }
-  const res = await fetch(url, {
+export const request = async (signal: AbortSignal, params: IParams) => {
+  const fetchUrl = new URL(url);
+  Object.keys(params).forEach(key => {
+    fetchUrl.searchParams.append(key, params[key]);
+  });
+
+  const res = await fetch(fetchUrl, {
     signal,
   });
-  return res.json();
+  const data: IResult = await res.json();
+  
+  if (data.status !== '1') {
+    throw new Error(data.info);
+  }
+  return data;
 };

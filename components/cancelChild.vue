@@ -4,7 +4,7 @@
     <h3>loading: <span>{{ loading }}</span></h3>
     <h3>error: <span>{{ error }}</span></h3>
     <h3>onCancel: <span>{{ onCancelStr }}</span></h3>
-    <button class="primary" @click="() => run()">run</button>
+    <button class="primary" @click="handleRun">run</button>
     <button @click="cancel">cancel</button>
     <button @click="reset">reset</button>
   </div>
@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRequest } from '@superarale/vue-use-request';
-import { request } from './request';
+import { request, IParams, correctKey } from './request';
 
 const onCancelStr = ref('');
 
@@ -30,4 +30,11 @@ const reset = () => {
 const { result, loading, error, run, cancel } = useRequest(request, {
   onCancel,
 });
+
+const handleRun = () => {
+  const params: IParams = {
+    key: correctKey,
+  };
+  run(params);
+};
 </script>
